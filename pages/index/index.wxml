@@ -1,0 +1,18 @@
+<swiper indicator-dots="true" bindchange="handleIndexChange">
+  <swiper-item wx:for="{{words}}" wx:key="{{item.objectId}}" class="tc">
+    <block wx:if="{{item.name}}">
+      <view>{{item.name}}</view>
+      <image class="image" mode="aspectFit" src="{{item.imgUrl}}" bindlongtap="handleLongTap"></image>
+    </block>
+    <block wx:else>
+      <view class="page-body-info">
+        <input type="text" placeholder="New Word" value="{{word}}" bindinput="handleInput"/>
+        <view class="image-plus image-plus-nb" bindtap="chooseImage">
+          <view class="image-plus-horizontal"></view>
+          <view class="image-plus-vertical"></view>
+        </view>
+        <view class="image-plus-text">选择图片</view>
+      </view>
+    </block>
+  </swiper-item>
+</swiper>
